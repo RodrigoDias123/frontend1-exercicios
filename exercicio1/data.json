@@ -1,0 +1,8 @@
+{
+  "titulo": "Minha Homepage",
+  "descricao": "Bem-vindo ao meu site",
+  "autor": {
+    "nome": "Rodrigo Dias"
+  },
+  "secoes": ["Sobre", "Portfólio", "Contacto"]
+}
