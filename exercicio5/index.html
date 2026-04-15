@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Image</title>
+</head>
+<body>
+    <main>
+        <h1>Dog Breed Image</h1>
+        <form id="breed-form">
+            <label for="breed">Breed:</label>
+            <input type="text" id="breed" name="breed" placeholder="Ex: labrador" required>
+            <button type="submit">Procurar</button>
+        </form>
+        <p id="error" class="error hidden"></p>
+        <div id="result" class="hidden">
+            <img id="dog-image" src="" alt="Dog image">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
