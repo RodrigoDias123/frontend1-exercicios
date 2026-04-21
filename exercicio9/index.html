@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+    <div id="image-carousel" class="splide">
+        <div class="splide__track"> 
+            <ul class="splide__list">
+                <li class="splide__slide"><img src="https://picsum.photos/seed/1/600/400" alt="Imagem 1"></li>
+                <li class="splide__slide"><img src="https://picsum.photos/seed/2/600/400" alt="Imagem 2"></li>
+                <li class="splide__slide"><img src="https://picsum.photos/seed/3/600/400" alt="Imagem 3"></li>
+                <li class="splide__slide"><img src="https://picsum.photos/seed/4/600/400" alt="Imagem 4"></li>
+                <li class="splide__slide"><img src="https://picsum.photos/seed/5/600/400" alt="Imagem 5"></li>
+            </ul>
+        </div>
+    </div>  
+
+        <!-- Exemplo Popper.js -->
+        <button id="popper-btn" style="margin: 40px;">Mostrar Tooltip</button>
+        <div id="tooltip" role="tooltip" style="background: #333; color: #fff; padding: 8px 12px; border-radius: 4px; display: none; position: absolute; z-index: 10;">
+            Tooltip com Popper.js!
+            <div id="arrow" data-popper-arrow style="width: 10px; height: 10px;"></div>
+        </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
