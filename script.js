@@ -9,9 +9,14 @@ function renderTasks() {
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
         li.className = 'todo-item';
-        
+        if (task.completed) li.classList.add('completed');
+
         li.innerHTML = `
             <div class="todo-content">
+                <label class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(${index})" ${task.completed ? 'checked' : ''}>
+                    <span class="checkmark"></span>
+                </label>
                 <span class="todo-text">${task.text}</span>
                 <span class="todo-date">
                     <i class="fa-regular fa-calendar-check"></i> ${task.date}
@@ -130,5 +135,11 @@ btnAdd.addEventListener('click', createTask);
 todoInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') createTask();
 });
+
+function toggleComplete(index) {
+    tasks[index].completed = !tasks[index].completed;
+    saveAndRefresh();
+}
+
 
 document.addEventListener('DOMContentLoaded', renderTasks);
