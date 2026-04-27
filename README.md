@@ -1,7 +1,7 @@
 # Projeto Final — ToDo List
 
 ## Nome do Website
-Escolher um nome para a aplicação (exemplo: **Tododledoo**).
+TaskFlow
 
 ---
 
@@ -51,6 +51,3 @@ Cada tarefa deve guardar:
 - Data de criação
 - Hora de criação
 
-Exemplo:
-```text
-Criado em: 15/04/2026 às 18:42
