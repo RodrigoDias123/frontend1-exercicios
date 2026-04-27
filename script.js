@@ -139,6 +139,15 @@ todoInput.addEventListener('keypress', (e) => {
 function toggleComplete(index) {
     tasks[index].completed = !tasks[index].completed;
     saveAndRefresh();
+
+        Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: tasks[index].completed ? 'Tarefa completada!' : 'Tarefa marcada como incompleta!',
+        showConfirmButton: false,
+        timer: 2000
+    });
 }
 
 
