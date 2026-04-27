@@ -14,7 +14,7 @@ function renderTasks() {
         li.innerHTML = `
             <div class="todo-content">
                 <label class="checkbox-container">
-                    <input type="checkbox" onchange="toggleComplete(${index})" ${task.completed ? 'checked' : ''}>
+                    <input type="checkbox" class="complete-checkbox" data-index="${index}" ${task.completed ? 'checked' : ''}>
                     <span class="checkmark"></span>
                 </label>
                 <span class="todo-text">${task.text}</span>
@@ -136,20 +136,23 @@ todoInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') createTask();
 });
 
-function toggleComplete(index) {
-    tasks[index].completed = !tasks[index].completed;
-    saveAndRefresh();
-    
 
+
+todoList.addEventListener('change', function(e) {
+    if (e.target && e.target.classList.contains('complete-checkbox')) {
+        const idx = parseInt(e.target.getAttribute('data-index'));
+        tasks[idx].completed = e.target.checked;
+        saveAndRefresh();
         Swal.fire({
-        toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: tasks[index].completed ? 'Tarefa completada!' : 'Tarefa marcada como incompleta!',
-        showConfirmButton: false,
-        timer: 2000
-    });
-}
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: tasks[idx].completed ? 'Tarefa completada!' : 'Tarefa marcada como incompleta!',
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+});
 
 
 document.addEventListener('DOMContentLoaded', renderTasks);
