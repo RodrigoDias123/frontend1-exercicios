@@ -139,6 +139,7 @@ todoInput.addEventListener('keypress', (e) => {
 function toggleComplete(index) {
     tasks[index].completed = !tasks[index].completed;
     saveAndRefresh();
+    
 
         Swal.fire({
         toast: true,
